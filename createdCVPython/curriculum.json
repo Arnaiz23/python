@@ -1,0 +1,41 @@
+{
+  "name": "John Doe",
+  "title": "Software Engineer",
+  "contact": {
+    "email": "john.doe@example.com",
+    "phone": "123-456-7890"
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Science in Computer Science",
+      "university": "ABC University",
+      "year": "2020"
+    },
+    {
+      "degree": "Master of Science in Software Engineering",
+      "university": "XYZ University",
+      "year": "2022"
+    }
+  ],
+  "experience": [
+    {
+      "position": "Software Developer",
+      "company": "Tech Solutions Inc.",
+      "duration": "2018 - 2021",
+      "description": "Developed web applications using Node.js and React."
+    },
+    {
+      "position": "Software Engineer",
+      "company": "Innovative Tech Ltd.",
+      "duration": "2021 - Present",
+      "description": "Working on backend development with Python and Django."
+    }
+  ],
+  "skills": [
+    "Python",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Django"
+  ]
+}
