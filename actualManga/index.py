@@ -19,6 +19,9 @@ for index, url in enumerate(urls):
     manga_name = " ".join(manga_name_dict)
     print(f"{index}. {manga_name.capitalize()}")
 
-option = int(input("Select a manga: "))
+try:
+    option = int(input("Select a manga: "))
+    webbrowser.open(urls[option], new=0, autoraise=True)
+except KeyboardInterrupt as e:
+    exit(1)
 
-webbrowser.open(urls[option], new=0, autoraise=True)
