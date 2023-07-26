@@ -1,9 +1,10 @@
 import webbrowser
 
-urls = [
-    "https://lectortmo.com/library/manga/78340/el-sabio-desterrado-creo-una-clase-invencible",
-    "https://lectortmo.com/library/manhwa/53005/trash-of-the-counts-family",
-]
+with open("mangas.txt") as MangaFile:
+    mangas = MangaFile.read()
+    mangasSplit = mangas.split("\n")
+    x = slice(len(mangasSplit) - 1)
+    urls = mangasSplit[x]
 
 print("Available mangas: ")
 
