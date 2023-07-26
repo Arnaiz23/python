@@ -1,6 +1,10 @@
 import webbrowser
+import os
+import sys
 
-with open("mangas.txt") as MangaFile:
+script_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
+
+with open(f"{script_directory}/mangas.txt") as MangaFile:
     mangas = MangaFile.read()
     mangasSplit = mangas.split("\n")
     x = slice(len(mangasSplit) - 1)
