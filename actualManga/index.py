@@ -1,6 +1,7 @@
 import webbrowser
 import sys
 import sqlite3
+import os
 
 
 # FUNCTIONS
@@ -70,7 +71,8 @@ def insertManga(cursor, con):
 
 
 def main():
-    database = "mangas.db"
+    current_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+    database = f"{current_path}/mangas.db"
     con = createConnection(database)
     cursor = con.cursor()
     cursor.execute(
