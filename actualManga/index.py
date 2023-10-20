@@ -69,6 +69,10 @@ def insertManga(cursor, con):
     cursor.execute("INSERT INTO mangas (name, url) VALUES (?,?)", (manga_name, url))
     con.commit()
 
+def lastManga(cursor):
+    manga = cursor.execute("SELECT url from mangas ORDER BY id DESC LIMIT 1")
+    webbrowser.open(manga.fetchone()[0], new=0, autoraise=True)
+
 
 def main():
     current_path = os.path.dirname(os.path.abspath(sys.argv[0]))
@@ -87,10 +91,10 @@ def main():
 
     args = sys.argv
 
-    possible_options = ["ls", "new", "del"]
+    possible_options = ["ls", "new", "del", "last"]
 
     if len(args) == 1:
-        print("\tls -> List the mangas \n\tnew -> Add new manga \n\tdel -> Delete manga")
+        print("\tls -> List the mangas \n\tnew -> Add new manga \n\tdel -> Delete manga\n\tlast -> Open last manga")
         exit()
     else:
         command = args[1]
@@ -110,6 +114,8 @@ def main():
     if command == "del":
         listMangas(cursor)
         deleteManga(cursor, con)
+    if command == "last":
+        lastManga(cursor)
 
 
 if __name__ == "__main__":
