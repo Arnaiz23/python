@@ -6,5 +6,7 @@ addrs = psutil.net_if_addrs()
 
 # print(type(addrs.keys()))
 # print(addrs.keys())
-print(list(addrs.keys())[1])
+# print(list(addrs.keys())[1])
 # print(sorted(psutil.net_if_addrs().keys())[2])
+
+print(addrs["enp37s0"][0][1])
