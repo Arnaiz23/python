@@ -5,6 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 
+
 class Mail:
     def __init__(self):
         load_dotenv()
@@ -13,7 +14,7 @@ class Mail:
         self.server.starttls()
         self.server.login(self.sender, os.getenv("PASS"))
 
-    def send_email(self, to, subject, content, image=None):
+    def send_email(self, to: str, subject: str, content: str, image=None):
         msg = MIMEMultipart()
         msg["Subject"] = subject
         msg["From"] = self.sender
